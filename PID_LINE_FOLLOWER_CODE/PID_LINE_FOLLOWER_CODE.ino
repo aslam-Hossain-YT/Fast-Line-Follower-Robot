@@ -138,7 +138,6 @@ void PID_LINE_FOLLOW() {
   if (sum == 0) {
     digitalWrite(led12, HIGH);
     if (turn != 's') {
-      delay(30);  //to turn from the center of the robot. adjust delay according to your need.
       motor(0,0);
       (turn == 'r') ? motor(-tsp, tsp), digitalWrite(led12, LOW) : motor(tsp, -tsp), digitalWrite(led12, LOW);
       while (!s[2] && !s[3]) reading();
@@ -158,13 +157,12 @@ void PID_LINE_FOLLOW() {
   if (s[0] && !s[5]) turn = 'r';
   if (s[5] && !s[0]) turn = 'l';
   else if (sum == 6) {
-    delay(20);
     reading();
     if (sum == 6) {
       motor(0, 0);
       while (sum == 6) reading();
     }
-    else if (sum == 0) turn = 'r';
+    else if (sum == 0) turn = 'l';
   }
 
   }
