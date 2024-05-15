@@ -13,7 +13,7 @@ int threshold = 512, sensor;
 int lbase = 200, rbase = 200;
 int lmotor, rmotor;
 float avg;
-int kp = 50, kd = 1000;
+int kp = 30, kd = 2000;
 int PID;
 float error, last_error;
 char turn;
@@ -140,14 +140,14 @@ void PID_LINE_FOLLOW() {
     if (turn != 's') {
       delay(30);  //to turn from the center of the robot. adjust delay according to your need.
       motor(0,0);
-      (turn == 'r') ? motor(tsp, -tsp), digitalWrite(led12, LOW) : motor(-tsp, tsp), digitalWrite(led12, LOW);
+      (turn == 'r') ? motor(-tsp, tsp), digitalWrite(led12, LOW) : motor(tsp, -tsp), digitalWrite(led12, LOW);
       while (!s[2] && !s[3]) reading();
       turn = 's';
     }
   }
   
   PID_reading();
-  error = 3.5 - avg;
+  error = 3 - avg;
   PID = error * kp + kd * (error - last_error);
   last_error = error;
 
