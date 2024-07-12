@@ -1,17 +1,10 @@
-#define rmf 6  //IN1
-#define rmb 5  //IN2
-#define lmf 4  //IN3
-#define lmb 2  //IN4
-#define rms 9  //EnA
-#define lms 3  //EnB
-/*
 #define rmf 4  //IN1
 #define rmb 7  //IN2
 #define lmf 3  //IN3
 #define lmb 2  //IN4
 #define rms 6  //EnA
 #define lms 5  //EnB
-*/
+  
 //declaration of necessary variable to line follow
 int s[6];
 int threshold = 512, sensor_position;
@@ -113,11 +106,11 @@ void sensor_reading() {
 
 void PID_LINE_FOLLOW() {
   int P, I, D, PID;
-  int left_speed = 200, right_speed = 200;
+  int left_speed = 250, right_speed = 250;
   int left_motor, right_motor;
   int turn_speed = 100;  //turn speed
   int setpoint = 3;
-  int kp = 50, kd = 1000;  //need to be adjusted
+  int kp = 100, kd = 500;  //need to be adjusted
 
   while (1) {
     sensor_reading();
