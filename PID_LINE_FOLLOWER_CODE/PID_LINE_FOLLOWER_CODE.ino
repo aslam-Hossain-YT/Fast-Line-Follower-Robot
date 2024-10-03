@@ -1,14 +1,22 @@
+//Note: Please Follow the circuit diagram.
+//𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐖𝐈𝐓𝐇 𝐌𝐄:
+//---------------------------------------------
+//𝑬-𝒎𝒂𝒊𝒍: aslamhshakil20@gmail.com
+//𝑭𝒂𝒄𝒆𝒃𝒐𝒐𝒌: https://www.facebook.com/aslamhossain3852
+//𝑾𝒉𝒂𝒕'𝒔 𝑨𝒑𝒑: https://wa.me/qr/HHV27IBDLRZCA1
+//𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎: https://t.me/+NmZDetFcTvA0MGU1
+
 //Motor pins
-#define rmf 6
-#define rmb 5
-#define lmf 4
-#define lmb 2
+#define rmf 7  //IN1
+#define rmb 4  //IN2
+#define lmf 3  //IN3
+#define lmb 2  //IN2
 //EnA and EnB
-#define rms 9  //EnA
-#define lms 3  //EnB
+#define rms 6  //EnA
+#define lms 5  //EnB
 
 int sensor[6];  //to store the sensor value
-int threshold = 300;
+int threshold = 512; //threshold = (minimum analog value + Maximum Analog Value) / 2
 float c;
 int left_motor_speed = 200, right_motor_speed = 200;
 int left_motor, right_motor;
@@ -26,7 +34,6 @@ int button4 = 11;
 int led12 = 12;
 int led = 13;
 bool button1_state, button2_state, button3_state, button4_state;
-
 
 void setup() {
   //motor driver pins as output
