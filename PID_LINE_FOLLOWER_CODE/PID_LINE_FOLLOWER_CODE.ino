@@ -1,10 +1,13 @@
-//Note: Please Follow the circuit diagram.
 //𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐖𝐈𝐓𝐇 𝐌𝐄:
 //---------------------------------------------
 //𝑬-𝒎𝒂𝒊𝒍: aslamhshakil20@gmail.com
 //𝑭𝒂𝒄𝒆𝒃𝒐𝒐𝒌: https://www.facebook.com/aslamhossain3852
 //𝑾𝒉𝒂𝒕'𝒔 𝑨𝒑𝒑: https://wa.me/qr/HHV27IBDLRZCA1
 //𝑻𝒆𝒍𝒆𝒈𝒓𝒂𝒎: https://t.me/+NmZDetFcTvA0MGU1
+
+//Note: Please Follow the circuit diagram.
+//connect IR sensor pin to analog pins A0 to A5. right to left sequence.
+//like that, the most left sensor to A5, then A4, A3, A2, A1, A0
 
 //Motor pins
 #define rmf 7  //IN1
