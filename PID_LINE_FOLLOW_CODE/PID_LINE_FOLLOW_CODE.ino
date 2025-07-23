@@ -34,7 +34,7 @@ ______________________________________________________
 1. connect IR sensor pin to analog pins A0 to A5. right to left sequence.
 2. like that, (from top view) the most left sensor to A5, then A4, A3, A2, A1, and the right most sensor pin to A0
 3. count the sensor pin from top view of the robot.
-4. First the analog reading of the sensor.
+4. First take the analog reading of the sensor.
 5. Note the sensors analog value from white and black surface.
 4. This code is for sensors which gives maximum valaue in black surface and minimum in white.
 If your sensor gives maximum value in white and minimum in black then you need to change
@@ -42,7 +42,14 @@ a little bit in analog to digital conversion in line number 213 and 214 of this 
 go there, i have given the necessary instruction.
 6. you must assigne theshold value for all the sensor properly.
 in line number 72 threshold[sensorNumber] = { 300, 300, 300, 300, 300, 300 };
+calculate threshold value by this equation, threshold = (maximum analog value + minimum analog value) / 2.
+analog value can be vary from different track.
+normally the printed track provides analog value on black surface is around 500-700.
+where black duck tap provides 900+.
 7. Adjust Kp Only from 50-90
+8. this is a basic pid code. not suitable for competition where maze type like is seen.
+so you need to upgrade the code for competition.
+you can take assistance from me.
 */
 
 //Motor pins (if you fail to connect them correctly then robot will not run)
