@@ -38,7 +38,7 @@ ______________________________________________________
 5. Note the sensors analog value from white and black surface.
 4. This code is for sensors which gives maximum valaue in black surface and minimum in white.
 If your sensor gives maximum value in white and minimum in black then you need to change
-a little bit in analog to digital conversion in line number 213 and 214 of this code.
+a little bit in analog to digital conversion in line number 220 and 221 of this code.
 go there, i have given the necessary instruction.
 6. you must assigne theshold value for all the sensor properly.
 in line number 72 threshold[sensorNumber] = { 300, 300, 300, 300, 300, 300 };
@@ -220,8 +220,8 @@ void read_sensor() {
     if (sensor[i] > threshold[i]) sensor[i] = 1;  //if your sensor gives higest (>900) analog value in white then replce it with 0
     else sensor[i] = 0;                           //if your sensor gives lowest analog value (50-100) in black then replce it with 1
     //Example:
-    //if (sensor[i] > threshold[i]) sensor[i] = 0; //uncomment 216 and 217 Number line
-    //else sensor[i] = 1;                         //and make comment 213 and 214 Number line
+    //if (sensor[i] > threshold[i]) sensor[i] = 0; //uncomment 223 and 224 Number line
+    //else sensor[i] = 1;                         //and make comment 220 and 221 Number line
   }
 
   sensor_sum = (sensor[0] + sensor[1] + sensor[2] + sensor[3] + sensor[4] + sensor[5]);
